@@ -1,0 +1,18 @@
+pipeline
+{
+	agent any
+	parameters
+	{
+		string(name: "stringName", description: "it is string", defaultValue: "AAAAAA")
+	}
+	stages
+	{
+		stage("Checking properties")
+		{
+			steps
+			{
+				echo "String value is $params.stringName"
+			}
+		}
+	}
+}
