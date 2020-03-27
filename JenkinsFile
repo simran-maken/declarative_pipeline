@@ -16,20 +16,17 @@ pipeline
 		}
 		stage("Checking input")
 		{
+			input
+			{
+				message "What to do?"
+				parameters
+				{
+					choice(choices: "1\n2\n3\n4", name: choiceName, description: "select choice")
+				}
+			}
 			steps
 			{
-				input
-				{
-					message "What to do?"
-					parameters
-					{
-						choice(choices: "1\n2\n3\n4", name: choiceName, description: "select choice")
-					}
-				}
-				steps
-				{
-					echo "CCCCCCCCCCCc: $choiceName"
-				}
+				echo "CCCCCCCCCCCc: $choiceName"
 			}
 		}
 	}
