@@ -21,7 +21,7 @@ pipeline
 				message "What to do?"
 				parameters
 				{
-					choice(choices: "1\n2\n3\n4", name: "choiceName"", description: "select choice")
+					choice(choices: "1\n2\n3\n4", name: "choiceName", description: "select choice")
 				}
 			}
 			steps
