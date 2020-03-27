@@ -14,5 +14,23 @@ pipeline
 				echo "String value is $params.stringName"
 			}
 		}
+		stage("Checking input")
+		{
+			steps
+			{
+				input
+				{
+					message "What to do?"
+					parameters
+					{
+						choice(choices: "1\n2\n3\n4", name: choiceName, description: "select choice")
+					}
+				}
+				steps
+				{
+					echo "CCCCCCCCCCCc: $choiceName"
+				}
+			}
+		}
 	}
 }
