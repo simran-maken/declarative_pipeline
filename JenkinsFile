@@ -19,7 +19,7 @@ pipeline
 				{
 					when
 					{
-						allof
+						allOf
 						{
 							expression {${params.stringName} == "AAAAAA"}
 						}
