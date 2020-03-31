@@ -21,7 +21,7 @@ pipeline
 					{
 						allOf
 						{
-							expression {${params.stringName} == "AAAAAA"}
+							expression {params.stringName == "AAAAAA"}
 						}
 					}
 					steps
