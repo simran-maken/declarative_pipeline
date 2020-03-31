@@ -15,15 +15,15 @@ pipeline
 		{
 			parallel
 			{
-				when
-				{
-					allof
-					{
-						expression {${params.stringName} == "AAAAAA"}
-					}
-				}
 				stage("AAAAAA")
 				{
+					when
+					{
+						allof
+						{
+							expression {${params.stringName} == "AAAAAA"}
+						}
+					}
 					steps
 					{
 						echo $params.stringName
