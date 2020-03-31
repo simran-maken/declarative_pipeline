@@ -56,11 +56,11 @@ pipeline
 			}
 		}*/
 	}
-}
-post
-{
-	success
+	post
 	{
-		echo "SUCCESS"
+		success
+		{
+			echo "SUCCESS"
+		}
 	}
 }
