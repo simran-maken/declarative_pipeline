@@ -40,7 +40,7 @@ pipeline
 				}
 			}
 		}
-		stage("Checking input")
+		/*stage("Checking input")
 		{
 			input
 			{
@@ -54,6 +54,6 @@ pipeline
 			{
 				echo "CCCCCCCCCCCc: ${choiceName}"
 			}
-		}
+		}*/
 	}
 }
