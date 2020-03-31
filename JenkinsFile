@@ -1,17 +1,43 @@
 pipeline
 {
 	agent any
+	triggers
+	{
+		githubPush()
+	}
 	parameters
 	{
 		string(name: "stringName", description: "it is string", defaultValue: "AAAAAA")
 	}
 	stages
 	{
-		stage("Checking properties")
+		stage("Checking properties, parallel and conditional")
 		{
-			steps
+			parallel
 			{
-				echo "String value is $params.stringName"
+				when
+				{
+					allof
+					{
+						expression {${params.stringName} == "AAAAAA"}
+					}
+				}
+				stage("AAAAAA")
+				{
+					steps
+					{
+						echo $params.stringName
+						sleep time: 10
+					}
+				}
+				stage("c")
+				{
+					steps
+					{
+						echo "BBBBBBB"
+						sleep time: 10
+					}
+				}
 			}
 		}
 		stage("Checking input")
