@@ -5,10 +5,10 @@ pipeline
 	{
 		githubPush()
 	}
-	options
+	/*options
 	{
 		buildDiscarder(logRotator(numToKeepStr: '3'))
-	}
+	}*/
 	parameters
 	{
 		string(name: "stringName", description: "it is string", defaultValue: "AAAAAA")
